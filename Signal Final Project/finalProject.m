@@ -1,0 +1,10 @@
+recObj = audiorecorder;
+disp('Start speaking.');
+recordblocking(recObj, 5);
+disp('End of Recording.');
+play(recObj);
+y = getaudiodata(recObj);
+plot(y);
+Fs=1E+4;
+filename='myVoice.wav';
+audiowrite('myVoice.wav',y,Fs);
