@@ -12,3 +12,5 @@ amp=0.5;
 delay=1;
 echo=echo_gen(y, Fs, delay, amp);
 audiowrite('myEchoVoice.wav',echo,Fs);
+noisy=y + randn(size(y));
+audiowrite('myNoisyVoice.wav',noisy,Fs);
