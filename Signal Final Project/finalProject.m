@@ -8,3 +8,7 @@ plot(y);
 Fs=1E+4;
 filename='myVoice.wav';
 audiowrite('myVoice.wav',y,Fs);
+amp=0.5;
+delay=1;
+echo=echo_gen(y, Fs, delay, amp);
+audiowrite('myEchoVoice.wav',echo,Fs);
