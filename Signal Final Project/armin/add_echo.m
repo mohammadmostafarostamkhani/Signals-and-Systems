@@ -1,4 +1,6 @@
-function echo = echo_gen(input, fs, delay, amp)    
+function echo = add_echo(input, fs, delay, amp)    
+%ADD_ECHO Summary of this function goes here
+%   Detailed explanation goes here
     sr = round(fs*delay);
     org = [input; zeros(sr,1)];
     effect = [zeros(sr,1); input*amp];

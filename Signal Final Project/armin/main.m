@@ -4,6 +4,7 @@ recordblocking(recObj, 7);
 disp('Stop');
 %play(recObj);
 y = getaudiodata(recObj);
+%y = audioread('original.wav');
 plot(y);
 fs=0.80E+4;
 audiowrite('original.wav',y,fs);
@@ -11,7 +12,7 @@ audiowrite('original.wav',y,fs);
 
 amp=0.4;
 delay=0.25;
-echo=echo_gen(y, fs, delay, amp);
+echo=add_echo(y, fs, delay, amp);
 audiowrite('echo.wav',echo,fs);
 
 

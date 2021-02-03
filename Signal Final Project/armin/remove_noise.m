@@ -7,7 +7,7 @@ for j=2:length(noisy)-1
     y(j,i) = (y(j-1,i) + y(j,i) + y(j+1,i))/3 ; 
 end
 g = gausswin(20); 
-g = g/sum(g); %It will be use for convolution
+g = g/sum(g);
 y= conv(y(:,1), g, 'same');
 result=sgolayfilt(y,1,17); 
 clean=result;
